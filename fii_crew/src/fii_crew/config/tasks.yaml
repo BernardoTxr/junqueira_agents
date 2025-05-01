@@ -1,17 +1,17 @@
 risk_analysis_task:
   description: >
-    Analise o texto do relatório presente em 'relatorio' e identifique os principais riscos do fundo imobiliário.
+    Analise o texto do relatório presente em {relatorio} e identifique os principais riscos do fundo imobiliário.
     Considere riscos como vacância, inadimplência, concentração de portfólio, localização, etc.
   expected_output: >
     Uma seção de análise de risco em que os riscos são enumerados em ordem decrescente e classificados com risco de 5/5 (mais arriscado) até 1/5 (menos arriscado).
     Justifique o motivo de classificação de cada risco, considerando o contexto do texto em 'relatorio'. 
-    Utilize números do texto em 'relatorio' para embasar a análise.
+    Utilize números do texto em {relatorio} para embasar a análise.
     Formato em markdown, sem usar blocos de código.
   agent: risk_specialist
 
 dre_analysis_task:
   description: >
-    Leia o texto do relatório presente em 'relatorio' e extraia os principais dados do Demonstrativo de Resultados (DRE) ou da Distribuição de Resultados.
+    Leia o texto do relatório presente em {relatorio} e extraia os principais dados do Demonstrativo de Resultados (DRE) ou da Distribuição de Resultados.
     Construa um resumo dos indicadores financeiros: receitas, despesas, lucro líquido, FFO, ou qualquer outro indicador financeiro encontrado.
   expected_output: >
     Seção detalhada com os dados do DRE e interpretação dos resultados do fundo.

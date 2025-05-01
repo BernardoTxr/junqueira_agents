@@ -1,10 +1,36 @@
 ```csv
-Risco,Criticidade,Justificativa,Impacto_DRE
-Vacância,4/5,"O relatório aponta uma taxa de vacância de X%, um aumento de Y% em relação ao período anterior, indicando um risco considerável.",Redução da receita
-Inadimplência,4/5,"A taxa de inadimplência atual é de X%, com um impacto de Y% na receita do fundo. A administração informa que está tomando medidas legais para a recuperação dos valores devidos.",Redução do fluxo de caixa
-Concentração de Portfólio,3/5,"O fundo possui apenas X imóveis, e os 3 maiores inquilinos respondem por Y% da receita total, indicando uma concentração considerável.",Vulnerabilidade da receita
-Mercado,3/5,"O relatório menciona um cenário de aumento das taxas de juros, o que pode impactar a avaliação dos imóveis e a capacidade de novos investimentos.",Impacto na avaliação dos imóveis
-Liquidez,2/5,"O volume médio diário de negociação das cotas é de X, o que indica uma liquidez moderada.",Dificuldade de saída de investidores
-Localização,2/5,"Os imóveis estão localizados em regiões com bom acesso e infraestrutura, o que mitiga o risco de localização.",Impacto potencial no valor dos imóveis e demanda por aluguel
-Regulamentação,1/5,"O relatório não menciona mudanças regulatórias significativas no momento.",Impacto na operação e rentabilidade do fundo
+Indicador,Valor,Unidade,Data,Fonte,Observacoes
+Risco_Vacancia,4,Rating,"Março 2025","Análise de Risco KNRI11","Vacância financeira do fundo aumentou para 6,23%"
+Risco_Concentracao_Geografica,3,Rating,"Março 2025","Análise de Risco KNRI11","Concentração significativa dos ativos do fundo na região de São Paulo"
+Risco_Alavancagem,3,Rating,"Março 2025","Análise de Risco KNRI11","Fundo possui alavancagem representada pelo CRI Cabreúva e financiamento para o Biosquare"
+Risco_Conclusao_Biosquare,3,Rating,"Março 2025","Análise de Risco KNRI11","Edifício Biosquare ainda está em construção, com conclusão prevista para o primeiro trimestre de 2026"
+Risco_Mercado,2,Rating,"Março 2025","Análise de Risco KNRI11","Valor de mercado do fundo está com um desconto de aproximadamente 16% em relação ao valor patrimonial"
+Risco_Inadimplencia,1,Rating,"Março 2025","Análise de Risco KNRI11","O relatório não apresenta informações diretas sobre inadimplência dos inquilinos"
+Risco_Concentracao_Inquilinos,1,Rating,"Março 2025","Análise de Risco KNRI11","Fundo possui mais de 150 inquilinos, o que contribui para a diversificação da receita"
+Receitas_Alugueis_Caixa,25240806,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+Receitas_Alugueis_Antecipados,2454048,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+Receita_Financeira,2178557,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+Lucro_Venda_Ativo,1999580,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+Reversao_Custo_Oferta,0,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+Outras_Receitas,0,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+Despesas_Condominiais,-580230,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+Despesas_IPTU,-420860,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+Outras_Despesas,-4169265,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+Resultado,26702636,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+Reserva,1501411,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+Distribuicao,28204047,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+Saldo_Inicial_Caixa,104006084,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+Alugueis_Fluxo_Caixa,25113894,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+Receita_Financeira_Fluxo_Caixa,2178557,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+Receita_Venda_Ativo_Fluxo_Caixa,2957874,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+Compra_Ativo,-550000,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+Benfeitorias,-604038,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+Taxa_Administracao,-3526773,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+Despesas_Condominio_IPTU_Outros,-1643581,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+Rendimentos_Distribuidos,-28203931,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+Saldo_Final_Caixa,99728087,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+Cota_Patrimonial,161.22,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+Variacao_Cota_Patrimonial,0.03,%,,"Análise do Desempenho Financeiro do KNRI11","Variação positiva"
+Patrimonio_Liquido,4547151519.19,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
+
 ```

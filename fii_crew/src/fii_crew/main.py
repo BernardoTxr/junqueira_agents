@@ -11,5 +11,4 @@ def run():
     # carregue o relatório texto_extraido.txt
     with open("texto_extraido.txt", "r", encoding="utf-8") as arquivo:
         texto = arquivo.read()
-    inputs = {"relatorio": texto}
-    FundoImobiliarioCrew().crew().kickoff(inputs=inputs)
+    FundoImobiliarioCrew().crew().kickoff(inputs={"relatorio": texto})
