@@ -1,0 +1,10 @@
+```csv
+Risco,Criticidade,Justificativa,Impacto_DRE
+Vacância,4/5,"O relatório aponta uma taxa de vacância de X%, um aumento de Y% em relação ao período anterior, indicando um risco considerável.",Redução da receita
+Inadimplência,4/5,"A taxa de inadimplência atual é de X%, com um impacto de Y% na receita do fundo. A administração informa que está tomando medidas legais para a recuperação dos valores devidos.",Redução do fluxo de caixa
+Concentração de Portfólio,3/5,"O fundo possui apenas X imóveis, e os 3 maiores inquilinos respondem por Y% da receita total, indicando uma concentração considerável.",Vulnerabilidade da receita
+Mercado,3/5,"O relatório menciona um cenário de aumento das taxas de juros, o que pode impactar a avaliação dos imóveis e a capacidade de novos investimentos.",Impacto na avaliação dos imóveis
+Liquidez,2/5,"O volume médio diário de negociação das cotas é de X, o que indica uma liquidez moderada.",Dificuldade de saída de investidores
+Localização,2/5,"Os imóveis estão localizados em regiões com bom acesso e infraestrutura, o que mitiga o risco de localização.",Impacto potencial no valor dos imóveis e demanda por aluguel
+Regulamentação,1/5,"O relatório não menciona mudanças regulatórias significativas no momento.",Impacto na operação e rentabilidade do fundo
+```
