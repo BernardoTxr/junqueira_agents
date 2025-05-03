@@ -39,7 +39,7 @@ class FundoImobiliarioCrew:
             config=self.tasks_config[
                 "risk_analysis_task"
             ],  # Configuração da task de análise de risco
-            output_file="output/risk_analysis.md",  # O relatório de riscos será salvo aqui
+            output_file="output/risk_analysis.txt",  # O relatório de riscos será salvo aqui
         )
 
     @task

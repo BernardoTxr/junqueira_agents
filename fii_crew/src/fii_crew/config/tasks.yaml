@@ -3,10 +3,19 @@ risk_analysis_task:
     Analise o texto do relatório presente em {relatorio} e identifique os principais riscos do fundo imobiliário.
     Considere riscos como vacância, inadimplência, concentração de portfólio, localização, etc.
   expected_output: >
-    Uma seção de análise de risco em que os riscos são enumerados em ordem decrescente e classificados com risco de 5/5 (mais arriscado) até 1/5 (menos arriscado).
-    Justifique o motivo de classificação de cada risco, considerando o contexto do texto em 'relatorio'. 
+    Analise os riscos do fundo de investimento do {relatorio} e forneça uma visão embasada sobre os riscos associados.
+    Um JSON como o de exemplo:
+    {
+    "nome_fundo": "Fundo Imobiliário XPTO",
+    "risco_geral": "O fundo possui uma estratégia de longo prazo, com investimentos em imóveis comerciais diversificados...",
+    "risco_vacancia": "O risco de vacância é moderado, com contratos de longo prazo e alta taxa de ocupação...",
+    "risco_inadimplencia": "A inadimplência tem se mantido baixa, com a maioria dos inquilinos com boa classificação de crédito...",
+    "risco_concentracao": "O fundo tem uma boa diversificação geográfica e setorial, mas há concentração em um único setor...",
+    "risco_reavaliacao": "O valor dos imóveis tem sido reavaliado anualmente, com boa performance de mercado...",
+    "risco_gestao": "A gestão do fundo é altamente experiente e com boa reputação no mercado...",
+    }
     Utilize números do texto em {relatorio} para embasar a análise.
-    Formato em markdown, sem usar blocos de código.
+    Retorne o JSON, sem formatação adicional. Não utilize blocos de código.
   agent: risk_specialist
 
 dre_analysis_task:

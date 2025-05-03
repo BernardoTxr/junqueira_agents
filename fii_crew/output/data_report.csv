@@ -1,36 +1,4 @@
 ```csv
-Indicador,Valor,Unidade,Data,Fonte,Observacoes
-Risco_Vacancia,4,Rating,"Março 2025","Análise de Risco KNRI11","Vacância financeira do fundo aumentou para 6,23%"
-Risco_Concentracao_Geografica,3,Rating,"Março 2025","Análise de Risco KNRI11","Concentração significativa dos ativos do fundo na região de São Paulo"
-Risco_Alavancagem,3,Rating,"Março 2025","Análise de Risco KNRI11","Fundo possui alavancagem representada pelo CRI Cabreúva e financiamento para o Biosquare"
-Risco_Conclusao_Biosquare,3,Rating,"Março 2025","Análise de Risco KNRI11","Edifício Biosquare ainda está em construção, com conclusão prevista para o primeiro trimestre de 2026"
-Risco_Mercado,2,Rating,"Março 2025","Análise de Risco KNRI11","Valor de mercado do fundo está com um desconto de aproximadamente 16% em relação ao valor patrimonial"
-Risco_Inadimplencia,1,Rating,"Março 2025","Análise de Risco KNRI11","O relatório não apresenta informações diretas sobre inadimplência dos inquilinos"
-Risco_Concentracao_Inquilinos,1,Rating,"Março 2025","Análise de Risco KNRI11","Fundo possui mais de 150 inquilinos, o que contribui para a diversificação da receita"
-Receitas_Alugueis_Caixa,25240806,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-Receitas_Alugueis_Antecipados,2454048,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-Receita_Financeira,2178557,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-Lucro_Venda_Ativo,1999580,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-Reversao_Custo_Oferta,0,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-Outras_Receitas,0,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-Despesas_Condominiais,-580230,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-Despesas_IPTU,-420860,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-Outras_Despesas,-4169265,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-Resultado,26702636,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-Reserva,1501411,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-Distribuicao,28204047,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-Saldo_Inicial_Caixa,104006084,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-Alugueis_Fluxo_Caixa,25113894,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-Receita_Financeira_Fluxo_Caixa,2178557,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-Receita_Venda_Ativo_Fluxo_Caixa,2957874,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-Compra_Ativo,-550000,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-Benfeitorias,-604038,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-Taxa_Administracao,-3526773,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-Despesas_Condominio_IPTU_Outros,-1643581,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-Rendimentos_Distribuidos,-28203931,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-Saldo_Final_Caixa,99728087,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-Cota_Patrimonial,161.22,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-Variacao_Cota_Patrimonial,0.03,%,,"Análise do Desempenho Financeiro do KNRI11","Variação positiva"
-Patrimonio_Liquido,4547151519.19,R$,"Março 2025","Análise do Desempenho Financeiro do KNRI11",
-
+nome_fundo,risco_geral,risco_vacancia,risco_inadimplencia,risco_concentracao,risco_reavaliacao,risco_gestao,receita_total,despesas_totais,resultado_liquido,distribuicao_por_cota,vacancia_fisica,vacancia_financeira,vacancia_financeira_ajustada
+Kinea Renda Imobiliária - FII,"O fundo busca gerar renda de aluguel mensal através de um portfólio diversificado de prédios corporativos e galpões logísticos, buscando um equilíbrio entre as duas tipologias para maior previsibilidade e menor volatilidade.","O fundo apresenta uma vacância física de 4,60% e uma vacância financeira de 6,25%. A vacância financeira ajustada pelas carências é de 7,61%. Há imóveis com alta vacância financeira como Buenos Aires Corporate (43,48%) e CD Itaqua (100,00%), enquanto outros apresentam vacância zero. A gestão demonstra estar ativa na busca por novos locatários para mitigar esse risco.","O relatório não detalha explicitamente a inadimplência, mas a diversificação entre mais de 150 inquilinos e a presença de grandes empresas como locatários (Google, Lojas Renner, BASF, Kimberly Clark etc.) sugere um risco de inadimplência relativamente baixo. A qualidade dos inquilinos é um fator atenuante.","A carteira é composta por 21 propriedades (13 edifícios comerciais e 8 centros logísticos), com mais de 150 inquilinos, indicando uma diversificação razoável. A distribuição dos contratos por setor mostra concentração em Logística (42%) e Engenharia (24%). A concentração geográfica é maior em São Paulo, o que pode ser um risco dependendo da performance econômica da região.","O relatório não traz informações detalhadas sobre reavaliações dos imóveis no período analisado. O valor de mercado do fundo está com um desconto de aproximadamente 16% em relação ao valor patrimonial, o que, segundo a gestão, não reflete a solidez da carteira. As variações da cota em emissões passadas são variáveis, com algumas apresentando rentabilidade negativa.","A gestão é realizada pela Kinea Investimentos LTDA, parte do Grupo Itaú Unibanco, o que sugere um nível de experiência e profissionalismo elevado. A gestão ativa é mencionada como um fator importante para mitigar a vacância. O fundo possui alavancagem, com um CRI Cabreúva de R$ 150 milhões (IPCA + 7,25%) e R$ 195,3 milhões com o Bradesco (TR + 9,50%), o que adiciona risco dependendo das condições de mercado e da capacidade de pagamento.",29673091,-5170355,26702636,1.00,4.60,6.25,7.61
 ```

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Relatório de Risco do Fundo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        header .fundo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header .data {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .secao {
+            background-color: #ffffff;
+            border-left: 5px solid #007BFF;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .secao h2 {
+            color: #007BFF;
+            margin-top: 0;
+        }
+
+        .conteudo {
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="fundo">{{ nome_fundo }}</div>
+    <div class="data">{{ data_analise }}</div>
+</header>
+
+<div class="secao">
+    <h2>1. Análise Geral do Risco</h2>
+    <div class="conteudo">
+        {{ risco_geral | safe }}
+    </div>
+</div>
+
+<div class="secao">
+    <h2>2. Risco de Vacância</h2>
+    <div class="conteudo">
+        {{ risco_vacancia | safe }}
+    </div>
+</div>
+
+<div class="secao">
+    <h2>3. Risco de Inadimplência</h2>
+    <div class="conteudo">
+        {{ risco_inadimplencia | safe }}
+    </div>
+</div>
+
+<div class="secao">
+    <h2>4. Risco de Concentração</h2>
+    <div class="conteudo">
+        {{ risco_concentracao | safe }}
+    </div>
+</div>
+
+<div class="secao">
+    <h2>5. Risco de Reavaliação Imobiliária</h2>
+    <div class="conteudo">
+        {{ risco_reavaliacao | safe }}
+    </div>
+</div>
+
+<div class="secao">
+    <h2>6. Risco de Gestão</h2>
+    <div class="conteudo">
+        {{ risco_gestao | safe }}
+    </div>
+</div>
+
+</body>
+</html>
