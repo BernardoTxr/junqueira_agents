@@ -12,3 +12,7 @@ def run():
     with open("texto_extraido.txt", "r", encoding="utf-8") as arquivo:
         texto = arquivo.read()
     FundoImobiliarioCrew().crew().kickoff(inputs={"relatorio": texto})
+
+
+if __name__ == "__main__":
+    run()

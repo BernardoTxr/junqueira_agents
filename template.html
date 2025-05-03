@@ -2,7 +2,7 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Relatório de Risco do Fundo</title>
+    <title>Relatório Financeiro do Fundo</title>
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;
@@ -28,6 +28,18 @@
         header .data {
             font-size: 16px;
             color: #666;
+        }
+
+        .secao-principal {
+            margin-bottom: 40px;
+        }
+
+        .secao-principal h1 {
+            font-size: 22px;
+            color: #34495e;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
         }
 
         .secao {
@@ -57,47 +69,103 @@
     <div class="data">{{ data_analise }}</div>
 </header>
 
-<div class="secao">
-    <h2>1. Análise Geral do Risco</h2>
-    <div class="conteudo">
-        {{ risco_geral | safe }}
+<div class="secao-principal">
+    <h1>Seção I – Análise de Risco</h1>
+
+    <div class="secao">
+        <h2>1. Visão Geral do Risco</h2>
+        <div class="conteudo">
+            {{ risco_geral | safe }}
+        </div>
+    </div>
+
+    <div class="secao">
+        <h2>2. Risco de Vacância</h2>
+        <div class="conteudo">
+            {{ risco_vacancia | safe }}
+        </div>
+    </div>
+
+    <div class="secao">
+        <h2>3. Risco de Inadimplência</h2>
+        <div class="conteudo">
+            {{ risco_inadimplencia | safe }}
+        </div>
+    </div>
+
+    <div class="secao">
+        <h2>4. Risco de Concentração</h2>
+        <div class="conteudo">
+            {{ risco_concentracao | safe }}
+        </div>
+    </div>
+
+    <div class="secao">
+        <h2>5. Risco de Reavaliação Imobiliária</h2>
+        <div class="conteudo">
+            {{ risco_reavaliacao | safe }}
+        </div>
+    </div>
+
+    <div class="secao">
+        <h2>6. Risco de Gestão</h2>
+        <div class="conteudo">
+            {{ risco_gestao | safe }}
+        </div>
     </div>
 </div>
 
-<div class="secao">
-    <h2>2. Risco de Vacância</h2>
-    <div class="conteudo">
-        {{ risco_vacancia | safe }}
+<div class="secao-principal">
+    <h1>Seção II – Análise da Demonstração do Resultado do Exercício (DRE)</h1>
+
+    <div class="secao">
+        <h2>1. Resumo Financeiro</h2>
+        <div class="conteudo">
+            <p><strong>Período de Referência:</strong> {{ periodo_referencia }}</p>
+            <p><strong>Receita Total:</strong> R$ {{ receita_total_locacao | safe }}</p>
+            <p><strong>Despesas Totais:</strong> R$ {{ despesas_totais | safe }}</p>
+            <p><strong>Resultado Operacional:</strong> R$ {{ resultado_operacional | safe }}</p>
+        </div>
+    </div>
+
+    <div class="secao">
+        <h2>2. Receita Operacional</h2>
+        <div class="conteudo">
+            <p><strong>Receita de Locação:</strong> R$ {{ receita_total_locacao | safe }}</p>
+            <p><strong>Outras Receitas:</strong> R$ {{ receita_outras | safe }}</p>
+        </div>
+    </div>
+
+    <div class="secao">
+        <h2>3. Despesas Operacionais</h2>
+        <div class="conteudo">
+            <p><strong>Condomínio:</strong> R$ {{ despesa_condominio | safe }}</p>
+            <p><strong>IPTU:</strong> R$ {{ despesa_iptu | safe }}</p>
+            <p><strong>Manutenção:</strong> R$ {{ despesa_manutencao | safe }}</p>
+            <p><strong>Seguros:</strong> R$ {{ despesa_seguros | safe }}</p>
+            <p><strong>Gestão:</strong> R$ {{ despesa_gestao | safe }}</p>
+            <p><strong>Administração:</strong> R$ {{ despesa_administracao | safe }}</p>
+            <p><strong>Custódia:</strong> R$ {{ despesa_custodia | safe }}</p>
+        </div>
+    </div>
+
+    <div class="secao">
+        <h2>4. Resultado Líquido</h2>
+        <div class="conteudo">
+            <p><strong>Resultado Financeiro Líquido:</strong> R$ {{ resultado_financeiro_liquido | safe }}</p>
+            <p><strong>Lucro Líquido Contábil:</strong> R$ {{ lucro_liquido_contabil | safe }}</p>
+            <p><strong>Ajustes Não Caixa:</strong></p>
+            <ul>
+                <li>Amortização: R$ {{ ajuste_amortizacao | safe }}</li>
+                <li>Reavaliação Patrimonial: R$ {{ ajuste_reavaliacao | safe }}</li>
+            </ul>
+            <p><strong>Resultado Caixa Distribuível:</strong> R$ {{ resultado_caixa_distribuivel | safe }}</p>
+            <p><strong>Rendimentos Distribuídos:</strong> R$ {{ rendimentos_distribuidos | safe }}</p>
+            <p><strong>Rendimento por Cota:</strong> R$ {{ rendimento_por_cota | safe }}</p>
+        </div>
     </div>
 </div>
 
-<div class="secao">
-    <h2>3. Risco de Inadimplência</h2>
-    <div class="conteudo">
-        {{ risco_inadimplencia | safe }}
-    </div>
-</div>
-
-<div class="secao">
-    <h2>4. Risco de Concentração</h2>
-    <div class="conteudo">
-        {{ risco_concentracao | safe }}
-    </div>
-</div>
-
-<div class="secao">
-    <h2>5. Risco de Reavaliação Imobiliária</h2>
-    <div class="conteudo">
-        {{ risco_reavaliacao | safe }}
-    </div>
-</div>
-
-<div class="secao">
-    <h2>6. Risco de Gestão</h2>
-    <div class="conteudo">
-        {{ risco_gestao | safe }}
-    </div>
-</div>
 
 </body>
 </html>
