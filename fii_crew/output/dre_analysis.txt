@@ -1,0 +1,23 @@
+Okay, I will analyze the provided document to extract the key financial indicators for the Kinea Renda Imobiliária FII (KNRI11) for March 2025 and construct a JSON object summarizing them, following the example and instructions precisely.
+
+```json
+{
+"nome_fundo": "Kinea Renda Imobiliária - FII (KNRI11)",
+"periodo_referencia": "Março 2025",
+"receita_total_locacao": 25240806.00,
+"receita_outras": 4178131.00,
+"despesas_operacionais": 5170325.00,
+"despesas_administrativas": 3526773.00,
+"resultado_operacional": 26702636.00,
+"receitas_financeiras": 2178557.00,
+"despesas_financeiras": 0.00,
+"resultado_financeiro_liquido": 2178557.00,
+"lucro_liquido_contabil": 26702636.00,
+"ajustes_nao_caixa": "Não Disponível",
+"resultado_caixa_distribuivel": 26702636.00,
+"rendimentos_distribuidos": 28203931.00,
+"rendimento_por_cota": 1.00,
+"quantidade_cotas": 28204047,
+"observacoes": "Receita de locação de R$ 25.240.806. Distribuição de R$1,00 por cota. Vacância financeira de 6,25%. Receitas de alugueis antecipados de R$ 2.454.048."
+}
+```

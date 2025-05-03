@@ -30,26 +30,14 @@ dre_analysis_task:
     "periodo_referencia": "2024-12",
     "receita_total_locacao": 1250000.00,
     "receita_outras": 50000.00,
-    "despesas_operacionais": {
-      "condominio": 120000.00,
-      "iptu": 90000.00,
-      "manutencao": 35000.00,
-      "seguros": 10000.00
-    },
-    "despesas_administrativas": {
-      "gestao": 30000.00,
-      "administracao": 25000.00,
-      "custodia": 10000.00
-    },
+    "despesas_operacionais": 120000.00,
+    "despesas_administrativas": 30000.00,
     "resultado_operacional": 1075000.00,
     "receitas_financeiras": 15000.00,
     "despesas_financeiras": 8000.00,
     "resultado_financeiro_liquido": 7000.00,
     "lucro_liquido_contabil": 1082000.00,
-    "ajustes_nao_caixa": {
-      "amortizacao": 20000.00,
-      "reavaliacao_patrimonial": -30000.00
-    },
+    "ajustes_nao_caixa": Não Disponível,
     "resultado_caixa_distribuivel": 1095000.00,
     "rendimentos_distribuidos": 1080000.00,
     "rendimento_por_cota": 0.85,
@@ -79,7 +67,7 @@ csv_structuring_task:
     CSV em texto puro, com separador vírgula, contendo os seguintes campos:
     "fundo", "risco", "perspectiva_rendimento", "recomendacao_compra", "resultado_operacional", "lucro_liquido", "intensidade_risco_geral", "intensidade_risco_vacancia", "intensidade_risco_inadimplencia", "intensidade_risco_concentracao", "intensidade_risco_reavaliacao", "intensidade_risco_gestao"
   agent: csv_builder
-  context: >
+  context: 
     - risk_analysis_task
     - dre_analysis_task
 
