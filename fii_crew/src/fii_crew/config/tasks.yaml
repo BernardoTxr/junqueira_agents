@@ -2,8 +2,8 @@ risk_analysis_task:
   description: >
     Analise o texto do relatório presente em {relatorio} e identifique os principais riscos do fundo imobiliário.
     Considere riscos como vacância, inadimplência, concentração de portfólio, localização, etc.
+    Utilize números do texto em {relatorio} para embasar a análise.
   expected_output: >
-    Analise os riscos do fundo de investimento do {relatorio} e forneça uma visão embasada sobre os riscos associados.
     Um JSON como o de exemplo:
     {
     "nome_fundo": "Fundo Imobiliário XPTO",
@@ -14,7 +14,6 @@ risk_analysis_task:
     "risco_reavaliacao": "O valor dos imóveis tem sido reavaliado anualmente, com boa performance de mercado...",
     "risco_gestao": "A gestão do fundo é altamente experiente e com boa reputação no mercado...",
     }
-    Utilize números do texto em {relatorio} para embasar a análise.
     Retorne o JSON, sem formatação adicional. Não utilize blocos de código.
   agent: risk_specialist
 
@@ -22,8 +21,8 @@ dre_analysis_task:
   description: >
     Leia o texto do relatório presente em {relatorio} e extraia os principais dados do Demonstrativo de Resultados (DRE) ou da Distribuição de Resultados.
     Construa um resumo dos indicadores financeiros: receitas, despesas, lucro líquido, FFO, ou qualquer outro indicador financeiro encontrado.
+    Utilize números do texto em {relatorio} para embasar a análise.
   expected_output: >
-    Analise os riscos do fundo de investimento do {relatorio} e forneça uma visão embasada sobre os indicadores financeiros.
     Um JSON como o de exemplo:
     {
     "nome_fundo": "XP Corporate Macaé FII",
@@ -44,7 +43,6 @@ dre_analysis_task:
     "quantidade_cotas": 1270588,
     "observacoes": "Receita aumentou 5% em relação ao trimestre anterior devido à locação de novos espaços. Multa rescisória não recorrente de R$ 30.000 incluída em 'receita_outras'."
     }
-    Utilize números do texto em {relatorio} para embasar a análise.
     Retorne o JSON, sem formatação adicional. Não utilize blocos de código.
   agent: dre_specialist
 
@@ -70,4 +68,5 @@ csv_structuring_task:
   context: 
     - risk_analysis_task
     - dre_analysis_task
+  
 

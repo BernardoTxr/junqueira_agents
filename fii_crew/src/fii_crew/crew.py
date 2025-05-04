@@ -1,9 +1,9 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task, before_kickoff, after_kickoff
 from crewai.agents.agent_builder.base_agent import BaseAgent
-from typing import List
-from docling.document_converter import DocumentConverter
+from typing import List, Tuple
 from jinja2 import Environment, FileSystemLoader
+from docling.document_converter import DocumentConverter
 from weasyprint import HTML
 import re
 import time
@@ -15,19 +15,8 @@ source = "download1 KNRI11.pdf"  # document per local path or URL
 # Define o Crew para os especialistas de Risco, DRE e CSV
 @CrewBase
 class FundoImobiliarioCrew:
-
-    @before_kickoff
-    def parse_pdf(self, source: str):
-        """Função para fazer o parse do PDF e extrair os dados necessários"""
-        converter = DocumentConverter()
-        result = converter.convert(source)
-        markdown_text = result.document.export_to_markdown()
-
-        with open("texto_extraido.txt", "w", encoding="utf-8") as arquivo:
-            arquivo.write(markdown_text)
-
     @after_kickoff
-    def render_pdf(self):
+    def render_pdf(self, input):
         """Função para renderizar o PDF com os dados extraídos"""
         # Carregar os dados a partir dos arquivos JSON
         with open("output/risk_analysis.txt", "r", encoding="utf-8") as analise:
