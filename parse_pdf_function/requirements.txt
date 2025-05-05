@@ -1,0 +1,4 @@
+flask
+gunicorn
+docling
+google-cloud-storage
