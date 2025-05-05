@@ -3,7 +3,6 @@ from crewai.project import CrewBase, agent, crew, task, before_kickoff, after_ki
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import List, Tuple
 from jinja2 import Environment, FileSystemLoader
-from docling.document_converter import DocumentConverter
 from weasyprint import HTML
 import re
 import time
