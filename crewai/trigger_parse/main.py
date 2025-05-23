@@ -16,7 +16,7 @@ def trigger_processar_pdf(event):
         return
 
     requests.post(
-        "https://junqueira-agents-903386606954.us-central1.run.app",
+        "https://junqueira-agents-903386606954.us-central1.run.app/processar",
         json={"bucket": bucket, "filename": filename},
         timeout=3600,  # até 60 minutos de espera
     )

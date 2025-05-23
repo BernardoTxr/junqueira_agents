@@ -13,6 +13,8 @@ def processar_pdf():
     bucket_name = data["bucket"]
     filename = data["filename"]
 
+    print(f"Received event for file: {filename} in bucket: {bucket_name}")
+
     bucket = storage_client.bucket(bucket_name)
     blob = bucket.blob(filename)
 
