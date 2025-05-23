@@ -26,7 +26,7 @@ def processar_pdf():
 
     markdown = result.document.export_to_markdown()
 
-    output_filename = f"relatorios_processados/{filename}.md"
+    output_filename = f"{filename}"
     output_blob = bucket.blob(output_filename)
 
     with open("/tmp/output.md", "w") as f:
