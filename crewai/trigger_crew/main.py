@@ -11,10 +11,12 @@ def trigger_cloud_run(cloud_event):
     bucket = data["bucket"]
     name = data["name"]
 
+    print(f"Received event for file: {name} in bucket: {bucket}")
+
     payload = {"bucket": bucket, "filename": name}
 
     response = requests.post(
-        "https://gerar-relatorios-903386606954.us-central1.run.app/processar",
+        "https://crewai-service-903386606954.us-central1.run.app",
         json=payload,
     )
 
