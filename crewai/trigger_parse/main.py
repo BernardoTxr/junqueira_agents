@@ -10,11 +10,13 @@ def trigger_processar_pdf(event):
     filename = data["name"]
     bucket = data["bucket"]
 
+    print(f"Received event for file: {filename} in bucket: {bucket}")
+
     if not filename.startswith("relatorios_brutos/"):
         return
 
     requests.post(
-        "https://processador-pdf-903386606954.southamerica-east1.run.app",
+        "https://junqueira-agents-903386606954.us-central1.run.app",
         json={"bucket": bucket, "filename": filename},
         timeout=3600,  # até 60 minutos de espera
     )
