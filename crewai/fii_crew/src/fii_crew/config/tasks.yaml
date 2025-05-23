@@ -13,6 +13,7 @@ risk_analysis_task:
     "risco_concentracao": "O fundo tem uma boa diversificação geográfica e setorial, mas há concentração em um único setor...",
     "risco_reavaliacao": "O valor dos imóveis tem sido reavaliado anualmente, com boa performance de mercado...",
     "risco_gestao": "A gestão do fundo é altamente experiente e com boa reputação no mercado...",
+    "risco_solvencia: "O fundo tem uma boa liquidez e capacidade de honrar suas obrigações financeiras, uma vez que suas despesas estão em torno de R$ 200.000 mensais e a receita média é de R$ 500.000 mensais...",
     }
     Retorne o JSON, sem formatação adicional. Não utilize blocos de código.
   agent: risk_specialist
@@ -41,6 +42,8 @@ dre_analysis_task:
     "rendimentos_distribuidos": 1080000.00,
     "rendimento_por_cota": 0.85,
     "quantidade_cotas": 1270588,
+    "analise_pagamento_de_despesas": "As despesas operacionais estão dentro do esperado, com uma leve redução em relação ao trimestre anterior. A despesa administrativa aumentou 10% devido a novos contratos de serviços.",
+    "analise_receita": "A receita total de locação aumentou 5% em relação ao trimestre anterior, com novos contratos firmados. A receita de outras fontes inclui uma multa rescisória não recorrente de R$ 30.000.",
     "observacoes": "Receita aumentou 5% em relação ao trimestre anterior devido à locação de novos espaços. Multa rescisória não recorrente de R$ 30.000 incluída em 'receita_outras'."
     }
     Retorne o JSON, sem formatação adicional. Não utilize blocos de código.

@@ -1,4 +1,4 @@
 ```csv
 fundo,risco,perspectiva_rendimento,recomendacao_compra,resultado_operacional,lucro_liquido,intensidade_risco_geral,intensidade_risco_vacancia,intensidade_risco_inadimplencia,intensidade_risco_concentracao,intensidade_risco_reavaliacao,intensidade_risco_gestao
-Kinea Renda Imobiliária - FII,0,0,1,26702636.00,26702636.00,3,3,1,4,2,2
+KNRI11,0,-1,0,26702636.00,26702636.00,3,4,2,4,2,2
 ```

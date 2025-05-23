@@ -113,6 +113,12 @@
             {{ risco_gestao | safe }}
         </div>
     </div>
+    <div class="secao">
+        <h2>7. Risco de Solvência</h2>
+        <div class="conteudo">
+            {{ risco_solvencia | safe }}
+        </div>
+    </div>
 </div>
 
 <div class="secao-principal">
@@ -122,37 +128,45 @@
         <h2>1. Resumo Financeiro</h2>
         <div class="conteudo">
             <p><strong>Período de Referência:</strong> {{ periodo_referencia }}</p>
-            <p><strong>Receita Total de Locação:</strong> R$ 25.240.806,00</p>
-            <p><strong>Resultado Operacional:</strong> R$ 26.702.636,00</p>
+            <p><strong>Receita Total de Locação:</strong> {{receita_total_locacao}}</p>
+            <p><strong>Resultado Operacional:</strong> {{resultado_operacional}}</p>
         </div>
     </div>
 
     <div class="secao">
         <h2>2. Receita Operacional</h2>
         <div class="conteudo">
-            <p><strong>Receita de Locação:</strong> R$ 25.240.806,00</p>
-            <p><strong>Outras Receitas:</strong> R$ 4.178.131,00</p>
+            <p><strong>Receita de Locação:</strong> {{receita_total_locacao}}</p>
+            <p><strong>Outras Receitas:</strong> {{receita_outras}}</p>
         </div>
     </div>
 
     <div class="secao">
         <h2>3. Despesas Operacionais</h2>
         <div class="conteudo">
-            <p><strong>Despesas Operacionais Totais:</strong> R$ 5.170.325,00</p>
-            <p><strong>Despesas Administrativas:</strong> R$ 3.526.773,00</p>
+            <p><strong>Despesas Operacionais Totais:</strong> {{despesas_operacionais}}</p>
+            <p><strong>Despesas Administrativas:</strong> {{despesas_administrativas}}</p>
         </div>
     </div>
 
     <div class="secao">
         <h2>4. Resultado Líquido</h2>
         <div class="conteudo">
-            <p><strong>Resultado Financeiro Líquido:</strong> R$ 2.178.557,00</p>
-            <p><strong>Lucro Líquido Contábil:</strong> R$ 26.702.636,00</p>
-            <p><strong>Ajustes Não Caixa:</strong> Não Disponível</p>
-            <p><strong>Resultado Caixa Distribuível:</strong> R$ 26.702.636,00</p>
-            <p><strong>Rendimentos Distribuídos:</strong> R$ 28.203.931,00</p>
-            <p><strong>Rendimento por Cota:</strong> R$ 1,00</p>
-            <p><strong>Quantidade de Cotas:</strong> 28.204.047</p>
+            <p><strong>Resultado Financeiro Líquido:</strong> {{resultado_financeiro_liquido}}</p>
+            <p><strong>Lucro Líquido Contábil:</strong> {{lucro_liquido_contabil}}</p>
+            <p><strong>Ajustes Não Caixa:</strong> {{ajustes_nao_caixa}}</p>
+            <p><strong>Resultado Caixa Distribuível:</strong> {{resultado_caixa_distribuivel}}</p>
+            <p><strong>Rendimentos Distribuídos:</strong> {{rendimentos_distribuidos}}</p>
+            <p><strong>Rendimento por Cota:</strong> {{rendimento_por_cota}}</p>
+            <p><strong>Quantidade de Cotas:</strong> {{quantidade_cotas}}</p>
+        </div>
+    </div>
+    <div class="secao">
+        <h2>5. Análises</h2>
+        <div class="conteudo">
+            <p><strong>Análise do pagamento de despesas:</strong> {{analise_pagamento_de_despesas}}</p>
+            <p><strong>Análise da receita:</strong> {{analise_receita}}</p>
+            <p><strong>Observações:</strong> {{observacoes}}</p>
         </div>
     </div>
 </div>
