@@ -25,6 +25,8 @@ def processar():
         ["crewai", "run"], capture_output=True, text=True, check=True
     )
 
+    filename = filename.replace(".txt", ".pdf")
+
     bucket = storage_client.bucket("relatorios-finais")
     new_blob = bucket.blob(filename)
     new_blob.upload_from_filename("/tmp/relatorio_final.pdf")
