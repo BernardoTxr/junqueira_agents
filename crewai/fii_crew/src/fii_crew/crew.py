@@ -7,6 +7,7 @@ from weasyprint import HTML
 import re
 import time
 import json
+import os
 
 source = "download1 KNRI11.pdf"  # document per local path or URL
 
@@ -53,6 +54,9 @@ class FundoImobiliarioCrew:
         # Adicionar data de análise nos dados
         dados["data_analise"] = time.strftime("%d/%m/%Y")
 
+        # seleciona apenas o mes de data_analise
+        mes = dados["data_analise"].split("/")[1]
+
         # Carregar o template HTML
         env = Environment(loader=FileSystemLoader("."))
         template = env.get_template("template.html")
@@ -64,7 +68,10 @@ class FundoImobiliarioCrew:
         pdf = HTML(string=html_content).write_pdf()
 
         # Salvar o PDF gerado
-        with open("output/relatorio_fundo_imobiliario.pdf", "wb") as f:
+        with open(
+            f"/home/bernardo_teixeira/Documents/quasili/junqueira_agents/crewai/fii_crew/output/{dados['nome_fundo']}_mes_{mes}.pdf",
+            "wb",
+        ) as f:
             f.write(pdf)
 
         print("Relatório PDF gerado com sucesso!")

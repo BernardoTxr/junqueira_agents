@@ -13,19 +13,19 @@ def processar():
     bucket = data["bucket"]
     filename = data["filename"]
 
+    print(f"Received event for file: {filename} in bucket: {bucket}")
+
     bucket = storage_client.bucket(bucket)
     blob = bucket.blob(filename)
 
     blob.download_to_filename("texto_extraido.txt")
 
-    try:
-        # Executa o crewai com seu script principal (pode ser um .py ou pyproject)
-        result = subprocess.run(
-            ["crewai", "run"], capture_output=True, text=True, check=True
-        )
-        new_filename = f"relatorio_final_{filename}"
-        new_blob = bucket.blob(new_filename)
-        new_blob.upload_from_filename("/tmp/output.pdf")
-        return jsonify({"status": "success", "output": result.stdout})
-    except subprocess.CalledProcessError as e:
-        return jsonify({"status": "error", "error": e.stderr}), 500
+    # Executa o crewai com seu script principal (pode ser um .py ou pyproject)
+    result = subprocess.run(
+        ["crewai", "run"], capture_output=True, text=True, check=True
+    )
+
+    bucket = storage_client.bucket("relatorios-finais")
+    new_blob = bucket.blob(filename)
+    new_blob.upload_from_filename("output/relatorio_fundo_imobiliario.pdf")
+    return jsonify({"status": "success", "output": result.stdout})

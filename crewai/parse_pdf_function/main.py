@@ -12,6 +12,7 @@ def processar_pdf():
     data = request.get_json()
     bucket_name = data["bucket"]
     filename = data["filename"]
+    new_filename = filename.replace(".pdf", ".txt")
 
     print(f"Received event for file: {filename} in bucket: {bucket_name}")
 
@@ -38,18 +39,15 @@ def processar_pdf():
     bucket_name = "relatorios-processados"
     bucket = storage_client.bucket(bucket_name)
 
-    output_filename = f"{filename}"
-    output_blob = bucket.blob(output_filename)
+    output_blob = bucket.blob(new_filename)
 
-    print(f"Uploading {output_filename} to bucket {bucket_name}...")
+    print(f"Uploading {new_filename} to bucket {bucket_name}...")
 
     with open("/tmp/output.md", "w") as f:
         f.write(markdown)
 
-    print(f"Markdown written to /tmp/output.md")
-
     output_blob.upload_from_filename("/tmp/output.md")
 
-    print(f"Uploaded {output_filename} to bucket {bucket_name}")
+    print(f"Uploaded {new_filename} to bucket {bucket_name}")
 
-    return jsonify({"status": "success", "output": output_filename})
+    return jsonify({"status": "success", "output": new_filename})
