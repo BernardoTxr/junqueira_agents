@@ -16,7 +16,7 @@ def trigger_cloud_run(cloud_event):
     payload = {"bucket": bucket, "filename": name}
 
     response = requests.post(
-        "https://crewai-service-903386606954.us-central1.run.app",
+        "https://crewai-service-903386606954.us-central1.run.app/processar",
         json=payload,
     )
 
