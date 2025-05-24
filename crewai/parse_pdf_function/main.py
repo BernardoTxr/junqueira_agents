@@ -35,7 +35,7 @@ def processar_pdf():
     print(f"Markdown conversion done")
 
     # trocando para o outro bucket
-    bucket_name = "relatorios_processados"
+    bucket_name = "relatorios-processados"
     bucket = storage_client.bucket(bucket_name)
 
     output_filename = f"{filename}"
