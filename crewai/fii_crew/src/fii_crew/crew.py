@@ -69,7 +69,7 @@ class FundoImobiliarioCrew:
 
         # Salvar o PDF gerado
         with open(
-            f"/home/bernardo_teixeira/Documents/quasili/junqueira_agents/crewai/fii_crew/output/{dados['nome_fundo']}_mes_{mes}.pdf",
+            f"/tmp/relatorio_final.pdf",
             "wb",
         ) as f:
             f.write(pdf)
