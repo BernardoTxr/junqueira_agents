@@ -12,9 +12,6 @@ def trigger_processar_pdf(event):
 
     print(f"Received event for file: {filename} in bucket: {bucket}")
 
-    if not filename.startswith("relatorios_brutos/"):
-        return
-
     requests.post(
         "https://junqueira-agents-903386606954.us-central1.run.app/processar",
         json={"bucket": bucket, "filename": filename},
