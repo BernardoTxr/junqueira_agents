@@ -69,7 +69,7 @@ class FundoImobiliarioCrew:
 
         # Salvar o PDF gerado
         with open(
-            f"/tmp/relatorio_final.pdf",
+            f"/output/relatorio_final.pdf",
             "wb",
         ) as f:
             f.write(pdf)
