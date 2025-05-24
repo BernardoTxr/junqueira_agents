@@ -20,8 +20,4 @@ def trigger_cloud_run(cloud_event):
         json=payload,
     )
 
-    if response.ok:
-        print("Relatório enviado com sucesso.")
-    else:
-        print("Erro ao enviar para o container:", response.text)
-        response.raise_for_status()
+    print("Requisição Feita.")
