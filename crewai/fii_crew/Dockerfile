@@ -13,7 +13,7 @@ COPY . .
 
 # Instala crewai + dependências
 RUN pip install --upgrade pip \
-    && pip install crewai flask gunicorn \
+    && pip install crewai flask gunicorn google-cloud-storage \
     && crewai install
 
 ENV VIRTUAL_ENV="/app/.venv"
