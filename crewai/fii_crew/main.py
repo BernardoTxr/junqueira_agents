@@ -26,7 +26,9 @@ def processar():
 
     blob.download_to_filename("texto_extraido.txt")
 
-    # Executa o crewai com seu script principal (pode ser um .py ou pyproject)
+    result = subprocess.run(
+        ["crewai", "install"], capture_output=True, text=True, check=True
+    )
     result = subprocess.run(
         ["crewai", "run"], capture_output=True, text=True, check=True
     )
