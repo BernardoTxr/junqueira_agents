@@ -8,8 +8,7 @@ import re
 import time
 import json
 import os
-
-source = "download1 KNRI11.pdf"  # document per local path or URL
+from pathlib import Path
 
 
 # Define o Crew para os especialistas de Risco, DRE e CSV
@@ -67,9 +66,16 @@ class FundoImobiliarioCrew:
         # Gerar o PDF com WeasyPrint
         pdf = HTML(string=html_content).write_pdf()
 
+        # Create an output directory in your working directory
+        output_dir = Path("output")  # Relative path
+        output_dir.mkdir(exist_ok=True, parents=True)
+
+        # Now use this path for your PDF
+        pdf_path = output_dir / "relatorio_final.pdf"
+
         # Salvar o PDF gerado
         with open(
-            f"/output/relatorio_final.pdf",
+            str(pdf_path),
             "wb",
         ) as f:
             f.write(pdf)
