@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import subprocess
 import os
 from google.cloud import storage
+from pathlib import Path
 
 app = Flask(__name__)
 storage_client = storage.Client()
@@ -34,5 +35,13 @@ def processar():
 
     bucket = storage_client.bucket("relatorios-finais")
     new_blob = bucket.blob(filename)
-    new_blob.upload_from_filename("/output/relatorio_final.pdf")
+
+    # Create an output directory in your working directory
+    output_dir = Path("output")  # Relative path
+    output_dir.mkdir(exist_ok=True, parents=True)
+
+    # Now use this path for your PDF
+    pdf_path = output_dir / "relatorio_final.pdf"
+
+    new_blob.upload_from_filename(pdf_path)
     return jsonify({"status": "success", "output": result.stdout})
