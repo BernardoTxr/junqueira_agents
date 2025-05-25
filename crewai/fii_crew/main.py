@@ -7,6 +7,11 @@ app = Flask(__name__)
 storage_client = storage.Client()
 
 
+@app.route("/health")
+def health():
+    return "OK", 200
+
+
 @app.route("/processar", methods=["POST"])
 def processar():
     data = request.get_json()
