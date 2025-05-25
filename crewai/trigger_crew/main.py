@@ -21,3 +21,4 @@ def trigger_cloud_run(cloud_event):
     )
 
     print("Requisição Feita.")
+    return "OK", 200

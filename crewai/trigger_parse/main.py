@@ -17,3 +17,4 @@ def trigger_processar_pdf(event):
         json={"bucket": bucket, "filename": filename},
         timeout=3600,  # até 60 minutos de espera
     )
+    return "OK", 200
