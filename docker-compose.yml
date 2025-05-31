@@ -1,0 +1,16 @@
+services:
+  web:
+      image: junqueiracrew-web
+      ports:
+          - "3000:3000"
+  parserpdf:
+      image: junqueiracrew-parsepdf
+      ports:
+          - "8000:8000"
+  analisefii:
+      image: junqueiracrew-analisefii
+      ports:
+          - "8001:8000"
+      environment:
+          - "GEMINI_API_KEY=AIzaSyAdKEElvOK8UHW3tglgSgrwBQjN47TQuUM"
+          - "MODEL=gemini/gemini-2.0-flash-001"
