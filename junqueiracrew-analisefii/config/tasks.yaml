@@ -1,0 +1,91 @@
+risk_analysis_task:
+  description: >
+    Analise o texto do relatório presente em {relatorio} e identifique os principais riscos do fundo imobiliário.
+    Considere riscos como vacância, inadimplência, concentração de portfólio, localização, etc.
+    Utilize números do texto em {relatorio} para embasar a análise.
+  expected_output: >
+    Retorne **exclusivamente um texto plano que imita JSON**, sem:
+    - Explicações sobre os dados.
+    - Frases como "Aqui está o JSON", "Vou analisar", "Segue abaixo", ou semelhantes.
+    - Blocos de código (não use ```, nem tipo `json`).
+    - Comentários, instruções ou marcações extras.
+
+    O conteúdo da resposta deve conter **apenas** um texto, com a seguinte estrutura:
+    {
+      "nome_fundo": "Fundo Imobiliário XPTO",
+      "risco_geral": "...",
+      "risco_vacancia": "...",
+      "risco_inadimplencia": "...",
+      "risco_concentracao": "...",
+      "risco_reavaliacao": "...",
+      "risco_gestao": "...",
+      "risco_solvencia": "..."
+    }
+
+    A resposta deve começar diretamente com `{` e terminar com `}`.
+  agent: risk_specialist
+
+
+dre_analysis_task:
+  description: >
+    Leia o texto do relatório presente em {relatorio} e extraia os principais dados do Demonstrativo de Resultados (DRE) ou da Distribuição de Resultados.
+    Construa um resumo dos indicadores financeiros: receitas, despesas, lucro líquido, FFO, ou qualquer outro indicador financeiro encontrado.
+    Utilize números do texto em {relatorio} para embasar a análise.
+  expected_output: >
+    Retorne **exclusivamente um texto plano que imita JSON**, sem:
+    - Explicações sobre os dados.
+    - Frases como "Aqui está o JSON", "Vou analisar", "Segue abaixo", ou semelhantes.
+    - Blocos de código (não use ```, nem tipo `json`).
+    - Comentários, instruções ou marcações extras.
+
+    O conteúdo da resposta deve conter **apenas** um texto, com a seguinte estrutura:
+    {
+    "nome_fundo": "XP Corporate Macaé FII",
+    "periodo_referencia": "2024-12",
+    "receita_total_locacao": 1250000.00,
+    "receita_outras": 50000.00,
+    "despesas_operacionais": 120000.00,
+    "despesas_administrativas": 30000.00,
+    "resultado_operacional": 1075000.00,
+    "receitas_financeiras": 15000.00,
+    "despesas_financeiras": 8000.00,
+    "resultado_financeiro_liquido": 7000.00,
+    "lucro_liquido_contabil": 1082000.00,
+    "ajustes_nao_caixa": Não Disponível,
+    "resultado_caixa_distribuivel": 1095000.00,
+    "rendimentos_distribuidos": 1080000.00,
+    "rendimento_por_cota": 0.85,
+    "quantidade_cotas": 1270588,
+    "analise_pagamento_de_despesas": "As despesas operacionais estão dentro do esperado, com uma leve redução em relação ao trimestre anterior. A despesa administrativa aumentou 10% devido a novos contratos de serviços.",
+    "analise_receita": "A receita total de locação aumentou 5% em relação ao trimestre anterior, com novos contratos firmados. A receita de outras fontes inclui uma multa rescisória não recorrente de R$ 30.000.",
+    "observacoes": "Receita aumentou 5% em relação ao trimestre anterior devido à locação de novos espaços. Multa rescisória não recorrente de R$ 30.000 incluída em 'receita_outras'."
+    }
+
+    A resposta deve começar diretamente com `{` e terminar com `}`.
+  agent: dre_specialist
+
+csv_structuring_task:
+  description: >
+    A partir da análise de risco e da análise do DRE de um fundo imobiliário, 
+    gere uma estrutura de dados tabular (CSV) com os seguintes campos:
+    - Uma avaliação categórica de risco (-1 para risco alto, 0 para neutro, 1 para risco baixo),
+    - Uma perspectiva de rendimento (-1 para queda, 0 para estável, 1 para aumento),
+    - Uma recomendação de compra (-1 para vender, 0 para manter, 1 para comprar),
+    - O resultado operacional do fundo,
+    - O lucro líquido do fundo,
+    - Intensidade do risco geral (classificado de 1 a 5),
+    - Intensidade do risco de vacância (classificado de 1 a 5),
+    - Intensidade do risco de inadimplência (classificado de 1 a 5),
+    - Intensidade do risco de concentração (classificado de 1 a 5),
+    - Intensidade do risco de reavaliação (classificado de 1 a 5),
+    - Intensidade do risco de gestão (classificado de 1 a 5),
+  expected_output: >
+    Retorne o conteúdo **em texto puro, imitando um csv**, sem usar blocos de código, sem frases como "aqui está seu CSV", e sem explicações adicionais.
+    A primeira linha deve ser o cabeçalho:
+    "fundo", "risco", "perspectiva_rendimento", "recomendacao_compra", "resultado_operacional", "lucro_liquido", "intensidade_risco_geral", "intensidade_risco_vacancia", "intensidade_risco_inadimplencia", "intensidade_risco_concentracao", "intensidade_risco_reavaliacao", "intensidade_risco_gestao"
+  agent: csv_builder
+  context: 
+    - risk_analysis_task
+    - dre_analysis_task
+  
+

@@ -1,0 +1,8 @@
+uvicorn
+crewai
+typing
+weasyprint
+jinja2
+fastapi
+python-dotenv
+pandas
