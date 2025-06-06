@@ -36,7 +36,7 @@ export function Inputzone({ setCarregando,apiURL,setResultadosAnalise,setResulta
 function enviarArquivos() {
     setCarregando(true); 
 
-    const apiUrl = "http://localhost:8000/processar";
+    const apiUrl = "http://104.154.164.226:8000/processar";
     const formData = new FormData();
 
     acceptedFiles.forEach((file) => {
@@ -61,7 +61,7 @@ function enviarArquivos() {
 
         console.log('Sucesso:', data.message);
 
-        return fetch("http://localhost:8001/processar", {
+        return fetch("http://104.154.164.226:8001/processar", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
