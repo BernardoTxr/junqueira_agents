@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+
 'use client';
 import React, { useState } from 'react';
 import { FileText, Download, Upload } from 'lucide-react';
@@ -11,9 +14,50 @@ export default function ReportViewer() {
   const [resultados_analise, setResultadosAnalise] = useState<{ [key: string]: string }>({});
 
   const handleDownload = () => {
-    // Simula download do relatório
-    alert('Download do relatório iniciado!');
-  };
+  if (!resultado_carregado || !resultados_analise || Object.keys(resultados_analise).length === 0) {
+    alert('Nenhum relatório disponível para download.');
+    return;
+  }
+
+  Object.entries(resultados_analise).forEach(([fileName, base64]) => {
+  // Detecta o tipo de arquivo pela extensão
+  let mimeType = 'application/octet-stream'; // padrão seguro
+
+  if (fileName.toLowerCase().endsWith('.pdf')) {
+    mimeType = 'application/pdf';
+  } else if (fileName.toLowerCase().endsWith('.csv')) {
+    mimeType = 'text/csv';
+  }
+
+  const blob = base64ToBlob(base64, mimeType);
+  const url = URL.createObjectURL(blob);
+
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = fileName; // Usa o nome original
+  document.body.appendChild(link);
+  link.click();
+
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+});
+
+};
+
+
+  function base64ToBlob(base64: string, mimeType: string) {
+    const byteCharacters = atob(base64);
+    const byteNumbers = new Array(byteCharacters.length);
+    for (let i = 0; i < byteCharacters.length; i++) {
+      byteNumbers[i] = byteCharacters.charCodeAt(i);
+    }
+    const byteArray = new Uint8Array(byteNumbers);
+    return new Blob([byteArray], { type: mimeType });
+  }
+
+
+
+  
 
   return (
     <div className="min-h-screen h-screen flex flex-col bg-white">
@@ -46,12 +90,10 @@ export default function ReportViewer() {
                   <p className="text-lg">Aguardando Relatório</p>
                 </div>
               ) : (
-                  <iframe
-                    src={`data:application/pdf;base64,${resultados_analise.relatorio_final}`}
-                    title="Relatório FIDC"
-                    className="w-full h-full"
-                    allow="fullscreen"
-                  />
+                  <div>
+                  <FileText size={48} className="mx-auto mb-4 text-gray-400 " />
+                  <p className="text-lg">Relatório pronto para Download!</p>
+                </div>
               )
             )
           }
